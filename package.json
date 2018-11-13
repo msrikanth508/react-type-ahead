@@ -1,0 +1,89 @@
+{
+    "name": "react-type-ahead",
+    "version": "1.0.0",
+    "description": "React Typeahead Component",
+    "main": "./lib/index.js",
+    "author": "Srikanth Mangipudi <msrikanth508@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "test": "jest",
+        "start": "webpack-dev-server --mode development",
+        "transpile": "babel src -d lib --copy-files",
+        "prepublishOnly": "npm run transpile",
+        "build": "webpack --mode production",
+        "deploy": "gh-pages -d examples/dist",
+        "publish-demo": "npm run build && npm run deploy"
+    },
+    "sideEffects": false,
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx}"
+        ],
+        "moduleNameMapper": {
+            "\\.css": "<rootDir>/src/__mocks__/styleMock.js"
+          },
+        "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js"
+    },
+    "peerDependencies": {
+        "react": ">=15.6",
+        "prop-types": "^15.6.0"
+    },
+    "dependencies": {
+        "react": "^16.3.1",
+        "react-dom": "^16.3.1"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.24.0",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.4",
+        "path": "^0.12.7",
+        "prop-types": "^15.6.0",
+        "webpack": "^4.20.2",
+        "webpack-cli": "^3.1.2",
+        "webpack-dev-server": "^3.1.9",
+        "babel-eslint": "^7.2.3",
+        "babel-plugin-syntax-dynamic-import": "^6.18.0",
+        "babel-plugin-transform-class-properties": "^6.23.0",
+        "babel-plugin-transform-decorators": "^6.22.0",
+        "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
+        "babel-plugin-transform-es3-property-literals": "^6.22.0",
+        "babel-plugin-transform-export-extensions": "^6.22.0",
+        "babel-plugin-transform-object-rest-spread": "^6.23.0",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-plugin-transform-safely": "^0.1.2",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-preset-stage-2": "^6.22.0",
+        "eslint": "^4.11.0",
+        "eslint-config-airbnb": "^16.1.0",
+        "eslint-import-resolver-webpack": "^0.10.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-jsx-a11y": "^6.0.2",
+        "eslint-plugin-react": "^7.5.1",
+        "css-loader": "^0.28.11",
+        "html-webpack-plugin": "^3.2.0",
+        "style-loader": "^0.20.3",
+        "jest":"^23.6.0",
+        "enzyme": "^3.7.0",
+        "enzyme-adapter-react-16": "^1.6.0",
+        "eslint-config-prettier": "^3.1.0",
+        "eslint-plugin-prettier": "^3.0.0",
+        "prettier": "^1.14.3"
+    },
+    "keywords": [
+        "react",
+        "autocomplete",
+        "typeahead",
+        "suggestions",
+        "bootstrap",
+        "input",
+        "form",
+        "field",
+        "autofill",
+        "dropdown",
+        "search"
+    ]
+}

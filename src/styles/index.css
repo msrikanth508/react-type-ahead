@@ -1,0 +1,130 @@
+:root {
+  --size-none: 0;
+  --font-size-base: 1rem;
+  --color-white-regular: #fff;
+  --color-blue-base: rgb(82, 142, 230);
+  --opacity-light: 0.2;
+  --opacity-base: 0.5;
+  --color-primary: #d4d4d4;
+  --typography-color-dark-secondary: rgba(0, 0, 0, 0.54);
+  --shadow-light-small: 0px 2px 8px 0px rgba(0, 0, 0, 0.27);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+.typeahead-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.typeahead-wrapper.is-disabled .typeahead{
+  border: 0;
+}
+.typeahead-wrapper.is-focused .typeahead {
+  border-color: var(--color-blue-base);
+}
+.typeahead {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+  width: inherit;
+  border: 1px solid #d4d4d4;
+}
+
+.typeahead .main-input {
+  display: block;
+  color: #555; /* TODO: Discuss input color with designer as it has shadow input value */
+  width: 100%;
+  margin: var(--size-none);
+  font-size: var(--font-size-regular);
+  max-width: 100%;
+  outline: none;
+  text-align: left;
+  padding: 0.5em 1em 0.5em 0.8em; /* TODO: replace with token */
+  background: var(--color-white-regular);
+  border: 0;
+  border-style: none;
+  border-radius: 0;
+}
+
+.typeahead .main-input:focus {
+  border-color: var(--color-blue-base);
+  box-shadow: none;
+  outline: 0;
+}
+
+.typeahead .main-input:disabled {
+  color: var(--typography-color-dark-secondary);
+  opacity: var(--opacity-light);
+}
+
+.typeahead .shadow-input {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  opacity: 0.5;
+  /* color: rgba(0, 0, 0, 0.5); */
+  color: var(--color-black-light);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  border-style: none;
+  margin: 0;
+  width: 100%;
+  font-size: var(--font-size-regular);
+  max-width: 100%;
+  outline: none;
+  text-align: left;
+  padding: 0.5em 1em 0.5em 0.8em;
+}
+
+.typeahead .shadow-input:focus {
+  outline: 0;
+}
+
+.typeahead-items {
+  position: absolute;
+  max-height: 350px;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  border-radius: 1px;
+  background-color: var(--color-white-base);
+  box-shadow: var(--shadow-light-small);
+}
+
+.typeahead-items.append-to-body {
+  position: static;
+}
+
+.typeahead-items .typeahead-item {
+  /* padding: 10px 12px; */
+  padding: 0.8em;
+  cursor: pointer;
+}
+
+.typeahead-items .typeahead-item.no-results {
+  cursor: default;
+}
+
+.typeahead-items .typeahead-item:not(.no-results):hover {
+  background-color: rgba(79, 71, 200, 0.1);
+}
+
+.typeahead-items .typeahead-item.active {
+  /* override focus bg style */
+  background-color: var(--color-primary);
+  color: var(--color-white-base);
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder {
+  color: var(--typography-color-dark-secondary);
+}
